@@ -4,7 +4,7 @@ requirejs.config({
         backbone: '../../backbone.1.0.0',
         underscore: '../../underscore.1.4.4',
         require: '../../require.js',
-        d3: '../../d3.v3.js'
+        d3: '../../d3.v3'
     },
     shim: {
         underscore: {

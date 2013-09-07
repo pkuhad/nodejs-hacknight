@@ -14,7 +14,7 @@ io.sockets.on('connection', function (socket) {
 
 	(function event_loop(){
 		setTimeout(function(){
-			var random_number = Math.floor(Math.random()*11)
+			var random_number = Math.floor(Math.random()*500)
 			socket.emit('number', { number: random_number });
 			event_loop();
 		}, 1000);
