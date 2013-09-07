@@ -1,3 +1,3 @@
-require(['app', 'shared/sync'], function (App) {
+require(['app'], function (App) {
     App.initialize();
 });

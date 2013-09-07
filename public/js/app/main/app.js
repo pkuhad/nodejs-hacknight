@@ -1,8 +1,8 @@
-define([], function (){
+define(['views/baseView'], function (BaseView){
     'use strict';
     var initialize = function () {
-        $('.something').each(function (index, value) {
-            //
+        $('.start-backbone').each(function (index, value) {
+			var view = new BaseView({ el: value });
         });
     };
     return {

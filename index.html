@@ -2,6 +2,8 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script src="http://localhost:8888/socket.io/socket.io.js"></script>
+<script data-main="static/js/app/main/config.js" src="static/js/require.js"></script>
+
 <script>
 $(function(){
   var socket = io.connect('http://localhost');
@@ -14,6 +16,7 @@ $(function(){
 </head>
 
 <body>
+<div class='start-backbone'></div>
 Hello World
 </body>
 </html>
