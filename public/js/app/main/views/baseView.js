@@ -1,16 +1,17 @@
-define(['backbone'], function (Backbone) {
+define(['backbone', 'views/graphView'], function (Backbone, GraphView) {
     'use strict';
     var view = Backbone.View.extend({
         initialize: function (options) {
-            _.bindAll(this, 'handleNumber');
+            _.bindAll(this, 'render');
             this.socket = io.connect('http://localhost');
-            this.socket.on('number', this.handleNumber);
+            this.socket.on('number', this.render);
+
+            this.graph = new GraphView({el: this.$el.find('.graph-view')});
         },
 
-        handleNumber: function(data){
-            console.log(data);  
-            console.log(this);
-            this.$el.html('<h1>'+data.number+'</h1>');
+        render: function(data){
+            this.$el.find('.number-counter').html('<h1>'+data.number+'</h1>');
+            this.graph.render(data.number);
         }
     });
 

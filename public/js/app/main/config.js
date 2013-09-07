@@ -3,7 +3,8 @@ requirejs.config({
     paths: {
         backbone: '../../backbone.1.0.0',
         underscore: '../../underscore.1.4.4',
-        require: '../../require.js'
+        require: '../../require.js',
+        d3: '../../d3.v3.js'
     },
     shim: {
         underscore: {
@@ -12,6 +13,9 @@ requirejs.config({
         backbone: {
             deps: ['underscore'],
             exports: 'Backbone'
+        },
+        d3: {
+            exports: 'd3'
         }
     },
     name: "main",
