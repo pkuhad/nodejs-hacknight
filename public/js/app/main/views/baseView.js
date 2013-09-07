@@ -22,7 +22,11 @@ define(['backbone', 'views/graphView'], function (Backbone, GraphView) {
             this.$tweet_board.html('');
             console.log(data.tweet); 
             _.each(data.tweet.statuses, function(tweet, index){
-                that.$tweet_board.append('<div class="tweet">'+tweet.text+'<b> '+tweet.user.followers_count+'</b></div>');
+                that.$tweet_board.append('<div class="tweet">'+tweet.text+' <div class="bar-container"></div><b> '
+                    + tweet.user.followers_count+'</b></div>');
+                var $bar = that.$tweet_board.find('.tweet').last().find('.bar-container');
+                var $graph = new GraphView({el: $bar});
+                $bar.html($graph.render(tweet.user.followers_count));
                 console.log(tweet);
                 console.log(tweet.text);
             });

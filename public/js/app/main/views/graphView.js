@@ -17,6 +17,7 @@ define(['backbone', 'd3'], function (Backbone, d3) {
             .style("width", function(d){
                 return d + "px";
             });
+            return this.$el.html();
         }
     });
 

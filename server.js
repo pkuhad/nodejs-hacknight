@@ -30,9 +30,9 @@ io.sockets.on('connection', function (socket) {
 				var random_number = Math.floor(Math.random()*500)
 				socket.emit('number', { number: random_number });
 				socket.emit('tweet', { tweet: reply});
-				event_loop();
+				//event_loop();
 			});
-		}, 5000);
+		}, 10);
 	})();
 
  	socket.on('my other event', function (data) {

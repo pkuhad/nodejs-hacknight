@@ -1,19 +1,20 @@
 div.bar {
     display: inline-block;
     width: 20px;
-    height: 75px;   /* We'll override this later */
+    max-width: 92%;
+    height: 20px;   /* We'll override this later */
     background-color: teal;
-    margin-left: 12px;
+    margin-top: 6px;
 }
 
 div.tweet{
 	padding: 6px;
+	border-bottom: 2px solid;
 }
 
 div.tweet-board{
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 95%;
+	margin-left: 24px;
 	border: 1px solid #d6d6d6;
 	padding: 18px;
 	box-shadow: 3px 8px 8px gray;
