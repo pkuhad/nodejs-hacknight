@@ -14,8 +14,16 @@ div.tweet{
 
 div.tweet-board{
 	width: 95%;
-	margin-left: 24px;
+	margin-left: 12px;
 	border: 1px solid #d6d6d6;
 	padding: 18px;
 	box-shadow: 3px 8px 8px gray;
+}
+
+img.user-dp{
+	margin-top: 6px;
+	border-radius: 28px;
+	margin-right: 12px;
+	box-shadow: 1px 1px 3px black;
+	float: left;
 }

@@ -27,8 +27,8 @@ io.sockets.on('connection', function (socket) {
 		setTimeout(function(){
 			twit.get('search/tweets', { q: 'india', count: 100 }, function(err, reply) {
 				console.log(err);
-				var random_number = Math.floor(Math.random()*500)
-				socket.emit('number', { number: random_number });
+				//var random_number = Math.floor(Math.random()*500)
+				//socket.emit('number', { number: random_number });
 				socket.emit('tweet', { tweet: reply});
 				//event_loop();
 			});
