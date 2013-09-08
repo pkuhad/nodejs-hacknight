@@ -7,14 +7,9 @@ var express = require('express')
 server.listen(8888);
 
 app.use('/static', express.static(__dirname + '/public'));
-var query = null;
+
 app.get('/', function (req, res) {
   	res.sendfile(__dirname + '/index.html');
-  	if(req.query.q){
-  		query = req.query.q;
-  	}
-  	console.log(query);
-
   	// Setting up Twitter
 	var Twit = require('twit');
 
@@ -29,9 +24,8 @@ app.get('/', function (req, res) {
 	io.sockets.on('connection', function (socket) {
 		(function event_loop(){
 			setTimeout(function(){
-				var quest = query || 'india';
+				var quest = req.query.q || 'india';
 				twit.get('search/tweets', { q: quest, count: 100 }, function(err, reply) {
-					console.log(query);
 					console.log(err);
 					//var random_number = Math.floor(Math.random()*500)
 					//socket.emit('number', { number: random_number });
