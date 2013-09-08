@@ -1,1 +1,1 @@
-Random experiment with nodejs - Generate random numbers, stream them over to browser and generate random graphs
+Random experiment with nodejs - Started with generate random numbers and streaming them over to browser using socket.io, ended up with searching tweets and finding out their influence count and rendering this influence as a simple bar graph.

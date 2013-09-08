@@ -26,7 +26,6 @@ app.get('/', function (req, res) {
 			setTimeout(function(){
 				var quest = req.query.q || 'india';
 				twit.get('search/tweets', { q: quest, count: 100 }, function(err, reply) {
-					console.log(err);
 					//var random_number = Math.floor(Math.random()*500)
 					//socket.emit('number', { number: random_number });
 					socket.emit('tweet', { tweet: reply});
@@ -34,10 +33,6 @@ app.get('/', function (req, res) {
 				});
 			}, 10);
 		})();
-
-	 	socket.on('my other event', function (data) {
-	    	console.log(data);
-	  	});
 
 	});
 });

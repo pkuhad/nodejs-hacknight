@@ -5,9 +5,7 @@ define(['backbone', 'd3'], function (Backbone, d3) {
         },
         
         render: function(number){
-            console.log(number);
             var dataset = [number];
-            console.log(dataset);
             this.$el.html('');  
             d3.select(this.el).selectAll("div")
             .data(dataset)

@@ -20,7 +20,6 @@ define(['backbone', 'views/graphView'], function (Backbone, GraphView) {
         renderTweet: function(data){
             var that = this;
             this.$tweet_board.html('');
-            console.log(data.tweet); 
             _.each(data.tweet.statuses, function(tweet, index){
                 that.$tweet_board.append('<div class="tweet"><img class="user-dp" src="'+ tweet.user.profile_image_url
                     +'"/> '+ tweet.text+' - <b>'+tweet.user.name+'</b> <div class="bar-container"></div><b> '
@@ -28,8 +27,6 @@ define(['backbone', 'views/graphView'], function (Backbone, GraphView) {
                 var $bar = that.$tweet_board.find('.tweet').last().find('.bar-container');
                 var $graph = new GraphView({el: $bar});
                 $bar.html($graph.render(tweet.user.followers_count));
-                console.log(tweet);
-                console.log(tweet.text);
             });
         }
     });
